@@ -582,6 +582,37 @@
 	.gry-block {
 		padding: 40px;
 	}
+	.about-tab li::before {
+		content: none;
+	}
+	.about-tab li {
+		margin-right: 21px;
+		display: inline-block;
+	}
+	.about-tab li.active .butn {
+		margin-left: 0px;
+	}
+	.about-tab li:hover .butn {
+		margin-left: 0px;
+	}
+	.about-history ul {
+		position: relative;
+		left: inherit;
+		top: inherit;
+		margin-bottom: 21px;
+		margin-top: 21px;
+	}
+	.about-history ul {
+		left: inherit;
+		top: inherit;
+		margin-bottom: 7px;
+		margin-top: 30px;
+	}
+	.genrl-block h2 {
+		font-size: 31px;
+		line-height: 37px;
+		margin-bottom: 11px;
+	}
 }
 @media screen and (max-width: 768px) {
 	.block {
@@ -2084,7 +2115,7 @@
 	.about-history ul {
 		margin-top: 0;
 	}
-	.block.top-125 {
+	.block.top-85 {
 		padding-top: 5px;
 	}
 	.be-teacher {
