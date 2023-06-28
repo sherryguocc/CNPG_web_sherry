@@ -190,8 +190,8 @@ section {
 .block.no-gap {
 	padding: 0;
 }
-.top-125 {
-	padding-top: 125px;
+.top-85 {
+	padding-top: 85px;
 }
 .bg-pattern,
 .parallax,
@@ -833,13 +833,13 @@ section {
 }
 .logo-title{
 	white-space: nowrap;
-	font-size: 48px;
+	font-size: calc(2.4vw);
 	font-weight: 700;
 	color: rgb(145, 143, 144);
 }
 .logo-subtitle{
 	text-align: right;
-	font-size: 36px;
+	font-size: calc(2vw);
 	background-color: rgba(255, 255, 255, 0);
 	border: none;
 	font-family: "Rage Italic Bold", "Rage", sans-serif ;
@@ -1165,7 +1165,7 @@ a.butn-light,
 /*--- About With TAb ---*/
 .img-with-bg {
 	position: relative;
-	width: 95%;
+	width: 75%;
 	min-height: 464px;
 	text-align: center;
 }
@@ -4720,4 +4720,7 @@ a.butn {
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
 	transform: scale(1.1);
+}
+.tp-resizeme{
+	font-size: calc(4vw)!important;
 }
