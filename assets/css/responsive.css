@@ -994,6 +994,10 @@
 	}
 }
 @media screen and (max-width: 640px) {
+	.option-set{
+		justify-content: initial!important;
+	}
+
 	.block {
 		padding: 60px 0;
 	}

@@ -179,7 +179,7 @@ section {
 	position: relative;
 	display: block;
 	width: 100%;
-	padding: 120px 0;
+	padding: 80px 0;
 }
 .block.no-top {
 	padding-top: 0;
@@ -1457,7 +1457,8 @@ a.butn-light,
 	padding: 0;
 	display: inline-block;
 	position: relative;
-	border: 1px solid #f2f2f2;
+	border-radius: 0!important;
+	/*border: 1px solid #f2f2f2;*/
 }
 #options li {
 	display: inline-block;
@@ -1470,7 +1471,8 @@ a.butn-light,
 	font-weight: 500;
 	color: #a0a0a0;
 	background: #fff;
-	padding: 14px 34px;
+	padding: 8px 34px;
+	white-space: nowrap;
 	border-right: 1px solid #f2f2f2;
 }
 #options li:last-child a {
@@ -4723,4 +4725,43 @@ a.butn {
 }
 .tp-resizeme{
 	font-size: calc(4vw)!important;
+}
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+	background-color: #F5F5F5;
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+	background-color: #F5F5F5;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+	background-color: #888;
+	border-radius: 8px;
+}
+
+/* 鼠标悬停在滚动条上时的滑块样式 */
+::-webkit-scrollbar-thumb:hover {
+	background-color: #555;
+}
+.option-set{
+	display: flex!important;
+	justify-content: center;
+	overflow-x: auto;
+}
+.event-img{
+	width: 100%;
+	aspect-ratio:3/2;
+	object-fit: cover;
+}
+.more-btn{
+	color: rgb(214, 149, 43);
+	text-align: right;
+	cursor: pointer;
+}
+#calendar{
+	padding:60px 120px;
 }
