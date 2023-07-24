@@ -2,8 +2,14 @@
 	.container {
 		max-width: 1600px;
 	}
+	#calendar{
+		padding:60px 120px;
+	}
 }
 @media screen and (max-width: 1024px) {
+	#calendar{
+		padding:60px 120px;
+	}
 	.block {
 		padding: 80px 0;
 	}
@@ -615,6 +621,9 @@
 	}
 }
 @media screen and (max-width: 768px) {
+	#calendar{
+		padding:10px;
+	}
 	.block {
 		padding: 60px 0;
 	}
