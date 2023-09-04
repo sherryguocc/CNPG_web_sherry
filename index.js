@@ -1,4 +1,4 @@
-const targetUrl = 'http://cnpg_cms.virtualera.cn'
+const targetUrl = 'https://cms.cnpg.co.nz'
 const getPostsList = () => {
     let yearOptionsElement = document.querySelector('#filter2')
     let homeEventsElement = document.querySelector('#events')

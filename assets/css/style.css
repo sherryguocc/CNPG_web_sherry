@@ -4762,6 +4762,11 @@ a.butn {
 	text-align: right;
 	cursor: pointer;
 }
-#calendar{
-	padding:60px 120px;
+
+.masonry{
+	height:auto!important;
+}
+.fc-header-toolbar{
+	flex-wrap: wrap;
+	gap: 10px;
 }
