@@ -4764,7 +4764,7 @@ a.butn {
 }
 
 .masonry{
-	height:auto!important;
+	/*height:auto!important;*/
 }
 .fc-header-toolbar{
 	flex-wrap: wrap;
