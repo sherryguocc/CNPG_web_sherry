@@ -21,7 +21,7 @@ const getPostsList = () => {
             let select_html = []
             let masonry_html = []
             Object.keys(yearsObj).sort((a, b) => b - a).forEach((item, index) => {
-                select_html.push(`<li><a id="select-${item}" href="#${item}" data-option-value=".${item}" title="${item}">${item}</a></li>`)
+                select_html.push(`<li><a id="select-${item}" href="#${item}" data-option-value=".${item}" title="${item}" class="${!index?'selected':''}">${item}</a></li>`)
                 yearsObj[item].sort((a, b) => {
                     return new Date(b.attributes.createdAt) - new Date(a.attributes.createdAt)
                 }).forEach(_item => {
