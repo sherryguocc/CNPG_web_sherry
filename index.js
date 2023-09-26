@@ -21,6 +21,9 @@ const getPostsList = () => {
             let select_html = []
             let masonry_html = []
             Object.keys(yearsObj).sort((a, b) => b - a).forEach((item, index) => {
+                if (!index){
+                    window.year = item
+                }
                 select_html.push(`<li><a id="select-${item}" href="#${item}" data-option-value=".${item}" title="${item}" class="${!index?'selected':''}">${item}</a></li>`)
                 yearsObj[item].sort((a, b) => {
                     return new Date(b.attributes.createdAt) - new Date(a.attributes.createdAt)
@@ -50,11 +53,14 @@ const getPostsList = () => {
             })
 
             yearOptionsElement.innerHTML = select_html.join('')
-
+            setTimeout(()=>{
+                const script = document.createElement("script");
+                script.src = "assets/js/isotope-init.js";
+                document.head.appendChild(script);
+            },0)
             if (location.href.indexOf('events') > -1) {
                 homeEventsElement.innerHTML = masonry_html.join('')
             } else {
-                console.log(masonry_html.slice(0, 6).join(''))
                 homeEventsElement.innerHTML = masonry_html.slice(0, 6).join('')
             }
 
@@ -68,7 +74,6 @@ const getPostsList = () => {
                     document.querySelector(`#select-${Object.keys(yearsObj).sort((a, b) => b - a)[0]}`).click()
                 }, 800)
             }
-
         })
         .catch(error => console.error('Error:', error));
 
