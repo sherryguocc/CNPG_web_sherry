@@ -5,6 +5,7 @@ const getPostsList = () => {
     let homeEventsElement = document.querySelector('#events')
     let events = []
     let yearsObj = {}
+    let homeObj = {}
     fetch('\n' +
         `${targetUrl}/api/articles?pagination[limit]=99999&pagination[start]=0&pagination[withCount]=true&populate=image,category,author,seo&locale=en`)
         .then(response => response.json())
@@ -18,20 +19,23 @@ const getPostsList = () => {
 
                 yearsObj[year].push(item);
             }
+
             let select_html = []
             let masonry_html = []
+            let home_html = []
+
             Object.keys(yearsObj).sort((a, b) => b - a).forEach((item, index) => {
                 if (!index){
-                    window.year = item
+                    Window.year = '.'+item
                 }
                 select_html.push(`<li><a id="select-${item}" href="#${item}" data-option-value=".${item}" title="${item}" class="${!index?'selected':''}">${item}</a></li>`)
                 yearsObj[item].sort((a, b) => {
                     return new Date(b.attributes.createdAt) - new Date(a.attributes.createdAt)
-                }).forEach(_item => {
+                }).forEach((_item,index) => {
 
                   let  ckeEle = document.createElement('div')
                     ckeEle.innerHTML=_item.attributes.ckeditor_content
-                    masonry_html.push(`
+                    let html = `
 <li class="col-sm-6 col-lg-4 ${item}">
                                 <div class="pop-course">
                                     <div class="course-thumb">
@@ -47,9 +51,12 @@ const getPostsList = () => {
                                         <p>${ckeEle.innerText}</p>
                                     </div>
                                 </div>
-                            </li>`)
+                            </li>`
+                    masonry_html.push(html)
+                    if (index<6){
+                        home_html.push(html)
+                    }
                 })
-
             })
 
             yearOptionsElement.innerHTML = select_html.join('')
@@ -61,7 +68,7 @@ const getPostsList = () => {
             if (location.href.indexOf('events') > -1) {
                 homeEventsElement.innerHTML = masonry_html.join('')
             } else {
-                homeEventsElement.innerHTML = masonry_html.slice(0, 6).join('')
+                homeEventsElement.innerHTML = home_html.join('')
             }
 
             if (location.search.indexOf('year') > -1) {

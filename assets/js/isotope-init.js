@@ -46,7 +46,7 @@ $(window).on('load', function(){
 		var $portfolio = $('.masonry');
 		console.log('window.year',window.year)
 		$portfolio.isotope({
-			filter: String(window.year)||'',
+			filter: window.year||'.2023',
 			masonry: {
 				/*columnWidth:0.6*/
 			}
