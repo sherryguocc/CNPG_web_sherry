@@ -4308,7 +4308,10 @@ a.stu-youtube {
 .follow-us i {
 	margin-left: 9px;
 }
-
+.endless-opp>ul{
+	text-align: left;
+	margin-bottom: 5px;
+}
 /*  Gallery page */
 .inner-pages .gallery-meta {
 	margin-bottom: 40px;
