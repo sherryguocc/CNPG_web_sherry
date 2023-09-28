@@ -48,7 +48,7 @@ const getPostsList = () => {
                                             <img src="assets/images/author.png" alt="">
                                             <span>${_item.attributes.title}</span>
                                         </div>
-                                        <p>${ckeEle.innerText}</p>
+                                        <p>${ckeEle.innerText.length>120?ckeEle.innerText.slice(0,140)+'...':ckeEle.innerText}</p>
                                     </div>
                                 </div>
                             </li>`

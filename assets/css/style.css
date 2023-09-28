@@ -2125,7 +2125,10 @@ a.stu-youtube {
 	margin-bottom: 23px;
 }
 .get-in-touch li:nth-child(2n) {
-	padding-left: 21px;
+	/*padding-left: 21px;*/
+}
+.registr-content{
+	text-align: left;
 }
 .about-logo {
 	position: relative;
@@ -4312,11 +4315,15 @@ a.stu-youtube {
 }
 .gallery-meta img {
 	width: 100%;
+	aspect-ratio: 4/3;
+	object-fit: cover;
 }
 .gallery2 .gallery-meta {
 	margin-bottom: 0px;
 }
-
+.space-around{
+	justify-content: space-around;
+}
 /* Scroll top */
 .scroll-top {
 	position: fixed;
@@ -4338,7 +4345,7 @@ a.stu-youtube {
 	visibility: visible;
 }
 /*--- popup ---*/
-.cust-modal {
+.modal-div {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -4370,7 +4377,7 @@ a.stu-youtube {
 	opacity: 1;
 	visibility: visible;
 }
-.cust-modal .model-content {
+.modal-div .model-content {
 	background: transparent;
 	padding: 10px;
 	/* overflow-y: scroll;
@@ -4426,7 +4433,7 @@ header.header2,
 	-o-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 }
-.cust-modal .model-content,
+.modal-div .model-content,
 .modal-overlay,
 .title-cat,
 .course-bg {
@@ -4660,7 +4667,7 @@ a.butn {
 	transform: translateX(-50%);
 }
 
-.cust-modal,
+.modal-div,
 .instructor:hover .title-cat,
 .funfact2 i,
 .be-teacher,

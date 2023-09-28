@@ -271,15 +271,31 @@ jQuery(document).ready(function(){
 
 	/*===== Popup =====*/
 	$( '.get-login-register' ).on( 'click', function(){
+		console.log('show-login-modal')
 	    $( '.cust-modal' ).addClass( 'show-model' );
 	    $( 'body' ).addClass( 'modal-visible' );
 	    return false;
 	});
 
+	$( '.show-wechat-modal' ).on( 'click', function(){
+		$( '.wechat-barcode-modal' ).addClass( 'show-model' );
+		$( 'body' ).addClass( 'modal-visible' );
+		return false;
+	});
+
+	$( '.show-wechat-helper-modal' ).on( 'click', function(){
+		$( '.wechat-helper-barcode-modal' ).addClass( 'show-model' );
+		$( 'body' ).addClass( 'modal-visible' );
+		return false;
+	});
+
+
 	$( '.modal-overlay, .model-close' ).on( 'click', function(){
 	    if ( $( 'body' ).hasClass( 'modal-visible' ) ) {
 	        $( 'body' ).removeClass( 'modal-visible' );
 	        $( '.cust-modal' ).removeClass( 'show-model' );
+			$( '.wechat-barcode-modal' ).removeClass( 'show-model' );
+			$( '.wechat-helper-barcode-modal' ).removeClass( 'show-model' );
 	    }
 	});
 
