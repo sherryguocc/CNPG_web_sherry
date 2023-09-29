@@ -113,7 +113,7 @@ function moreBtnClick() {
 
 function initCalendar(events) {
 
-
+    console.log(events)
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
