@@ -40,7 +40,7 @@ const getPostsList = () => {
                                 <div class="pop-course">
                                     <div class="course-thumb">
                                         <img class="event-img" src="${targetUrl + _item.attributes.image.data.attributes.url}" alt="">
-                                        <span>${new Date(_item.attributes.createdAt).toLocaleString()}</span>
+                                        <span>${new Date(_item.attributes.eventDate).toLocaleString()}</span>
                                         <a href="blog.html?id=${_item.attributes.slug}" target="_blank" class="butn">Learn more</a>
                                     </div>
                                     <div class="course-meta">
@@ -88,17 +88,12 @@ const getPostsList = () => {
         `${targetUrl}/api/upcoming-events?pagination[limit]=99999&pagination[start]=0&pagination[withCount]=true&locale=en`)
         .then(response => response.json())
         .then(data => {
-            console.log('data', data)
             data.data.forEach(item => {
-                /*{
-    "description": "this is a event"
-}
-                * */
                 events.push({
                     start: item.attributes.eventStart,
                     end: item.attributes.eventEnd,
                     title: item.attributes.title,
-
+                    description: item.attributes.description,
                 })
             })
             initCalendar(events)
@@ -113,7 +108,7 @@ function moreBtnClick() {
 
 function initCalendar(events) {
 
-    console.log(events)
+    console.log(JSON.stringify(events))
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
