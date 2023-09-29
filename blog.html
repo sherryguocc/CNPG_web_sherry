@@ -26,7 +26,7 @@
             window.close()
         }else{
             const id = search.split('=')[1]
-            document.querySelector('#iframe').src=`http://localhost:3000/blog/${id}?lang=en`
+            document.querySelector('#iframe').src=`https://cms_client.cnpg.co.nz/blog/${id}?lang=en`
             document.title = id.replaceAll('-',' ')
         }
     }
