@@ -2125,7 +2125,10 @@ a.stu-youtube {
 	margin-bottom: 23px;
 }
 .get-in-touch li:nth-child(2n) {
-	padding-left: 21px;
+	/*padding-left: 21px;*/
+}
+.registr-content{
+	text-align: left;
 }
 .about-logo {
 	position: relative;
@@ -2914,7 +2917,36 @@ a.stu-youtube {
 	height: 470px;
 }
 .sub-head .bg-image {
-	background: fixed;
+	background-attachment: fixed;
+}
+.sponsor-container.platinum {
+	--max-width: 240px;
+}
+
+.sponsor-container {
+	padding: 0 20%;
+	--max-width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(var(--max-width),1fr));
+	column-gap: 4px;
+}
+.sponsor-item {
+	margin: 2px 0;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 2px;
+	transition: background-color .2s ease;
+	height: calc(var(--max-width) / 2 - 6px);
+}
+img {
+	transition: filter .2s ease;
+}
+
+.sponsor-item img {
+	max-width: calc(var(--max-width) - 30px);
+	max-height: calc(var(--max-width) / 2 - 20px);
 }
 .sub-meta {
 	position: relative;
@@ -4305,18 +4337,25 @@ a.stu-youtube {
 .follow-us i {
 	margin-left: 9px;
 }
-
+.endless-opp>ul{
+	text-align: left;
+	margin-bottom: 5px;
+}
 /*  Gallery page */
 .inner-pages .gallery-meta {
 	margin-bottom: 40px;
 }
 .gallery-meta img {
 	width: 100%;
+	aspect-ratio: 4/3;
+	object-fit: cover;
 }
 .gallery2 .gallery-meta {
 	margin-bottom: 0px;
 }
-
+.space-around{
+	justify-content: space-around;
+}
 /* Scroll top */
 .scroll-top {
 	position: fixed;
@@ -4338,7 +4377,7 @@ a.stu-youtube {
 	visibility: visible;
 }
 /*--- popup ---*/
-.cust-modal {
+.modal-div {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -4370,7 +4409,7 @@ a.stu-youtube {
 	opacity: 1;
 	visibility: visible;
 }
-.cust-modal .model-content {
+.modal-div .model-content {
 	background: transparent;
 	padding: 10px;
 	/* overflow-y: scroll;
@@ -4426,7 +4465,7 @@ header.header2,
 	-o-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 }
-.cust-modal .model-content,
+.modal-div .model-content,
 .modal-overlay,
 .title-cat,
 .course-bg {
@@ -4660,7 +4699,7 @@ a.butn {
 	transform: translateX(-50%);
 }
 
-.cust-modal,
+.modal-div,
 .instructor:hover .title-cat,
 .funfact2 i,
 .be-teacher,
@@ -4713,6 +4752,8 @@ a.butn {
 	-ms-transform: scale(1);
 	-o-transform: scale(1);
 	transform: scale(1);
+	aspect-ratio: 0.8;
+	object-fit: cover;
 }
 .instructor:hover img,
 .gallery-meta:hover img,
@@ -4757,6 +4798,11 @@ a.butn {
 	aspect-ratio:3/2;
 	object-fit: cover;
 }
+.gallery-car2 img{
+	aspect-ratio: 4/3;
+	object-fit: cover;
+}
+
 .more-btn{
 	color: rgb(214, 149, 43);
 	text-align: right;
@@ -4764,9 +4810,19 @@ a.butn {
 }
 
 .masonry{
-	height:auto!important;
+	/*height:auto!important;*/
 }
 .fc-header-toolbar{
 	flex-wrap: wrap;
 	gap: 10px;
+}
+.contact-info-detail{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	font-size: 1.4rem;
+	margin-bottom: 20px;
+}
+.contact-info-detail a{
+	color: #0d95e8;
 }
